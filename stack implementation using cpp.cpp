@@ -90,3 +90,30 @@ int main() {
     
 
 }
+
+
+/* OUTPUT:
+1) Push is Stack:
+2) POP in Stack:
+3) Display the Stack:
+4) Exit
+Enter your choice: 1
+Enter element to Push 
+23
+Enter your choice: 1
+Enter element to Push 
+23
+Enter your choice: 3
+Elements of stack:
+23 
+23 
+Enter your choice: 2
+Poped element is: 23
+Enter your choice: 2
+Poped element is: 23
+Enter your choice: 3
+Warning: Stack is empty!!
+Enter your choice: 2
+Warning: Stack is Underflowing!!
+Enter your choice: 
+*/
