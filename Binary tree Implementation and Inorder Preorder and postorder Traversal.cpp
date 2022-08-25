@@ -1,5 +1,22 @@
 #include<iostream>
 using namespace std;
+
+int rear = -1;
+int front = 0;
+struct tree *queue[10];
+    
+void push(struct tree *data)
+{
+    rear++;
+    queue[rear] = data;
+}
+struct tree* pop()
+{
+    struct tree *s;
+    s = queue[front];
+    front++;
+    return s;
+}
 struct tree
 {
     int data;
@@ -127,6 +144,21 @@ void PostOrder(struct tree *root)
         cout<<root->data<<"---->>";
     }
 }
+void levelOrder(struct tree *root)
+{
+    if(!root)
+    {
+        return;
+    }
+    cout<<root->data<<"---->>";
+    push(root->left);
+    push(root->right);
+    while(rear != front)
+    {
+        levelOrder(pop());
+    }
+    return;
+}
 int main()
 {
     int i = 0;
@@ -145,6 +177,9 @@ int main()
     inOrder(root);
     cout<<"\n\nPostorder traversal is:"<<endl;
     PostOrder(root);
+    
+    cout<<"\n\nLevel wise traversal is:"<<endl;
+    levelOrder(root);
     
     return 0;
 }
